@@ -58,3 +58,11 @@ SuperCollider extensions directory: add the option `-DCMAKE_INSTALL_PREFIX=/path
 
 It's expected that the SuperCollider repo is cloned at `../supercollider` relative to this repo. If
 it's not: add the option `-DSC_PATH=/path/to/sc/source`.
+
+## License
+
+As noted by https://github.com/VegaDeftwing/PinkTromboneVCV the original Pink Trombone C++ Code is MIT License'd & Copyright (c) 2021 cutelabnyc, available at https://github.com/cutelabnyc/pink-trombone-cpp
+
+The original Pink Trombone (Javascript) is Copyright 2017 Neil Thapen and also MIT licensed. It is available at https://dood.al/pinktrombone/.
+
+However, following PinkTromboneVCV this project is also GPLv3.
