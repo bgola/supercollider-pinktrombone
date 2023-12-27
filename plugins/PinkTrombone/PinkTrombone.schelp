@@ -1,0 +1,39 @@
+class:: PinkTrombone
+summary:: SuperCollider port of PinkTrombone (https://dood.al/pinktrombone/)
+related:: 
+categories:: UGens
+
+description::
+
+A SuperCollider port of https://dood.al/pinktrombone/
+
+classmethods::
+
+method::ar, kr
+
+argument::TODO
+
+argument::TODO
+
+
+examples::
+
+code::
+
+// Modulate everything
+s.boot;
+
+Ndef(\pinkt, {
+    PinkTrombone.ar(
+        BPF.ar(WhiteNoise.ar(LFNoise1.kr(0.4).range(0,1)), 3000),
+        LFNoise0.kr(4).exprange(20,2000),
+        LFNoise1.kr(3.3).range(0,1),
+        LFNoise0.kr(1.6).range(5,50), 
+        LFNoise1.kr(1.3).range(1.6,8), 
+        LFNoise1.kr(3).range(0,1), 
+        LFNoise1.kr(1.2).range(0.6,1), 
+        LFNoise1.kr(1).range(0.6,1));
+}).play;
+
+
+::
