@@ -4,13 +4,14 @@ SuperCollider port of https://dood.al/pinktrombone/
 
 Based on many ports around, inlcuding:
 
-https://github.com/VegaDeftwing/PinkTromboneVCV
-https://github.com/giuliomoro/pink-trombone
-https://github.com/zakaton/Pink-Trombone
-https://github.com/jamesstaub/pink-trombone-osc
-https://github.com/cutelabnyc/pink-trombone-plugin
+- https://github.com/VegaDeftwing/PinkTromboneVCV
+- https://github.com/giuliomoro/pink-trombone
+- https://github.com/zakaton/Pink-Trombone
+- https://github.com/jamesstaub/pink-trombone-osc
+- https://github.com/cutelabnyc/pink-trombone-plugin
 
 This is a work in progress, I still would like to expose the internal parameters in a nicer way.
+
 Also, some modulations / parameter values might end up in glitchy behaviour.
 
 ## Example
