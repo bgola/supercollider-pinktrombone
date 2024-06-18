@@ -21,11 +21,13 @@ public:
 	sample_t getNoiseModulator();
 	void setTargetFrequency(sample_t frequency); // 140
 	void setTargetTenseness(sample_t tenseness); // 0.6
+        void setVibratoDepth(sample_t depth);						     // 
 	void setIntensity(sample_t intensity);
 	void adjustIntensity();
 	sample_t calculateVibrato();
 	void calculateNewFrequency();
 	void calculateNewTenseness();
+	sample_t vibratoDepth;
 private:
 	void setupWaveform(sample_t lambda);
 	sample_t normalizedLFWaveform(sample_t t);

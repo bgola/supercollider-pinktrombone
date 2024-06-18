@@ -1,5 +1,5 @@
 PinkTrombone : UGen {
-	*ar { arg noiseSource=0.0, freq=400.0, tenseness=0.2, tongueIndex=30, tongueDiameter=3.5, constrictionX=0.5, constrictionY=0.5, fricativeIntens=1.0;
+	*ar { arg noiseSource=0.0, freq=400.0, tenseness=0.2, tongueIndex=30, tongueDiameter=3.5, constrictionX=0.5, constrictionY=0.5, fricativeIntens=1.0, vibratoDepth=1.0;
 		if (noiseSource.rate != \audio) {
 			noiseSource = K2A.ar(noiseSource);
 		};
@@ -24,9 +24,13 @@ PinkTrombone : UGen {
 		if (fricativeIntens.rate != \audio) {
 			fricativeIntens = K2A.ar(fricativeIntens);
 		};
+		if (vibratoDepth.rate != \audio) {
+			vibratoDepth = K2A.ar(vibratoDepth);
+		};
 	
-		^this.multiNew('audio', noiseSource, freq, tenseness, tongueIndex, tongueDiameter, constrictionX, constrictionY, fricativeIntens);
+		^this.multiNew('audio', noiseSource, freq, tenseness, tongueIndex, tongueDiameter, constrictionX, constrictionY, fricativeIntens, vibratoDepth);
 	}
+
 	checkInputs {
 		^this.checkValidInputs;
 	}

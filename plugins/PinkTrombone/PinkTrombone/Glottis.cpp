@@ -23,6 +23,7 @@ Glottis::Glottis(double sampleRate) :
     intensity(0),
     loudness(1),
     vibratoAmount(VIBRATO_AMOUNT),
+    vibratoDepth(1.0),
     vibratoFrequency(VIBRATO_FREQUENCY),
     autoWobble(false),
     isTouched(true),
@@ -96,6 +97,11 @@ void Glottis::setTargetFrequency(sample_t frequency)
 	this->targetFrequency = frequency;
 }
 
+void Glottis::setVibratoDepth(sample_t depth)
+{
+	this->vibratoDepth = depth;
+}
+
 void Glottis::setTargetTenseness(sample_t tenseness)
 {
 	this->targetTenseness = tenseness;
@@ -120,7 +126,7 @@ sample_t Glottis::calculateVibrato()
 		vibrato += 0.2 * simplex1(this->totalTime * 0.98);
 		vibrato += 0.4 * simplex1(this->totalTime * 0.5);
 	}
-	return vibrato;
+	return vibrato*this->vibratoDepth;
 }
 
 void Glottis::calculateNewFrequency() {

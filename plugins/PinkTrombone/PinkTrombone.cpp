@@ -66,7 +66,10 @@ void PinkTrombone::next(int nSamples) {
     const float *constrictionX = in(5);
     const float *constrictionY = in(6);
     const float *fricativeIntens = in(7);
+    const float *vibratoDepth = in(8);
 
+    //Print("%f\n", fricativeIntens[0]);
+    //Print("%f\n", vibratoDepth[0]);
 
     Unit* unit = (Unit*) this;
     bool isnull = false;
@@ -76,6 +79,8 @@ void PinkTrombone::next(int nSamples) {
     	glottis->setIntensity(fricativeLevel);
     	glottis->setTargetFrequency(freq[i]);
     	glottis->setTargetTenseness(tenseness[i]);
+    	glottis->setVibratoDepth(vibratoDepth[i]);
+	//Print("%f\n", glottis->vibratoDepth);
 	tract->setRestDiameter(tongueIndex[i], tongueDiameter[i]);
 	
 	//tractProps.noseStart = (int)(params[NOSE_PARAM].getValue());
