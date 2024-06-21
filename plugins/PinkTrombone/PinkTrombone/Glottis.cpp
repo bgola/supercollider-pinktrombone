@@ -39,7 +39,7 @@ void Glottis::setupWaveform(sample_t lambda)
 	this->frequency = this->oldFrequency * (1 - lambda) + this->newFrequency * lambda;
 	sample_t tenseness = this->oldTenseness * (1 - lambda) + this->newTenseness * lambda;
 	this->waveformLength = 1.0 / this->frequency;
-	this->loudness = pow(fmax(0, tenseness), 0.25);
+	this->loudness = pow(fmax(0, 1-cos(targetTenseness*M_PI*0.5)), 0.25);
 
 	this->Rd = clamp(3 * (1 - tenseness), 0.5, 2.7);
 
